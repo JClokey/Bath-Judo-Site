@@ -9,7 +9,11 @@
     </head>
     <body>
 	    <div class="page-header">
-	        <h1><a href="/">Joe's Blog</a></h1>
+	    	{% if user.is_authenticated %}
+		        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> 
+	        {% endif %}
+	        <h1><a href="/">Joe's projects</a></h1>
+	        <h3>A place for me to document projects, from web development and design, to rock climbing and Judo</h3>
 	    </div>
 	    <div class="content container">
 	        <div class="row">
